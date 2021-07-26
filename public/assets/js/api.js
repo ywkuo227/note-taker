@@ -1,26 +1,14 @@
+// Require Express.js Router, functions from fileOps and UUID.
 const api = require("express").Router();
-const { readFromFile, readAndAppend } = require("./fsUtils");
+const { readFromFile, readAndAppend, deleteAndWrite } = require("./fileOps");
 const uuid = require("uuid");
 
+// API GET Route to retrieve all stored notes.
 api.get("/notes", (req, res) => { readFromFile("./db/db.json").then((data) => res.json(JSON.parse(data))); });
 
-// api.get("/notes/:note", (req, res) => {
-//     const activeNote = req.params.notes;
-//     console.log(activeNote);
-//     readFromFile("./db/db.json")
-//         .then((data) => {
-//             for (let i = 0; i < data.length; i++) {
-//                 if (activeNote === data[i].note_id) {
-//                     return res.json(JSON.parse(data[i]));
-//                 }
-//             }
-
-//             return res.json(false);
-//         });
-// });
-
+// API POST Route to post new note to the store.
 api.post("/notes", (req, res) => {
-    const { id, title, text } = req.body;
+    const { title, text } = req.body;
 
     if (req.body) {
         const newNote = {
@@ -34,6 +22,13 @@ api.post("/notes", (req, res) => {
     } else {
         res.error("Error in adding note :( ")
     }
+});
+
+// API DELETE Route to delete note entry by ID.
+api.delete("/notes/:id", (req, res) => {
+    const idToDel = req.params.id;
+    deleteAndWrite(idToDel, "./db/db.json");
+    return res.json("Note entry deleted");
 });
 
 module.exports = api;

@@ -1,26 +1,7 @@
 [
     {
-        "title": "Test Title",
-        "text": "Test text"
-    },
-    {
-        "id": "5e75aaa6-ea81-488b-86f3-6bc60d65f7fd",
-        "title": "TEST1",
-        "text": "Test 1 content"
-    },
-    {
-        "id": "d40d315a-a806-4d1c-91f0-52ff0d3b97b4",
-        "title": "Test2",
-        "text": "Test2 content"
-    },
-    {
-        "id": "83d0a977-9df4-41a5-a0dc-af3a8d4ccb5c",
-        "title": "Test3",
-        "text": "Test3 content"
-    },
-    {
-        "id": "283124ce-947b-4c4f-9911-7e2e66811f4e",
-        "title": "Test4",
-        "text": "test4 content"
+        "id": "7c27eb1f-9005-4d47-88a0-8fcebe24d3e6",
+        "title": "Welcome to Note Taker!",
+        "text": "Please use \"+\" to add new note entry.\n\nTo save new note entry, click 💾 to save the note.\n\nTo view existing note, click on any note entry on the left pane.\n\n\nHave a great day!"
     }
 ]
