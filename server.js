@@ -5,7 +5,7 @@ const api = require("./public/assets/js/api");
 
 // Set up the port the Express server will be listening to.
 const app = express();
-var PORT = process.env.PORT || 3001;
+var PORT = process.env.PORT || 3000;
 
 // Middleware for parsing JSON and urlencoded form data.
 app.use(express.json());
